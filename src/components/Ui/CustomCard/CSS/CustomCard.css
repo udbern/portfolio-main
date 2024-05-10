@@ -1,0 +1,45 @@
+.card-container {
+    box-shadow: 0 2px 15px -6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    
+    font-family: 'Roboto', sans-serif;
+    height: 300px;
+    margin: 16px auto;
+    position: relative;
+    overflow: hidden;
+    
+   
+  }
+  
+  .card-image-container {
+    position: relative;
+    height: 100%;
+  }
+  
+  .card-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+.card-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff4800b7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    transition: top 0.7s ease;
+  opacity: 0.9;
+
+  }
+  
+  .card-container:hover .card-overlay {
+    top: 0;
+  }
+  
