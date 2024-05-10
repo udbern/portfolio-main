@@ -19,7 +19,6 @@ function stacks() {
         <RiTailwindCssFill/>
         <FaReact/>
         <RiNextjsFill/>
-        
         </section>
     </>
   )

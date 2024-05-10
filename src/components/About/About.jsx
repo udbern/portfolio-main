@@ -1,11 +1,11 @@
-import React from "react";
+import React  from "react";
 import coding from "../../assets/images/coding.jpg";
 import Stacks from "./_component/Stacks/stacks";
 import CustomButton from "../Ui/CustomButton/CustomButton";
 function About() {
   return (
     <>
-      <section className=" font-roboto mt-2 pt-10 container mx-auto">
+      <section className=" font-roboto mt-2 pt-10 container mx-auto" id="about" >
         <div class="max-w-7xl w-full mx-auto">
           <div class="grid  md:grid-cols-2 justify-center items-center gap-10">
             <div class="h-[500px] rounded-sm overflow-hidden hidden md:block w-[500px]">

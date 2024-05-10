@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import { NextUIProvider } from "@nextui-org/react";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
