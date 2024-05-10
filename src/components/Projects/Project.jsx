@@ -14,12 +14,7 @@ function Project() {
   return (
     <>
       <section className="font-roboto text-center mt-2 mb-10 pt-20 block justify-center  container mx-auto">
-        <h2 className="capitalize text-2xl pb-10  font-bold ">my projects</h2>
-        <p className="max-w-3xl mx-auto  pb-10 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem voluptate, ullam eum dolorum corrupti expedita enim
-          atque. Hic, eos mollitia.
-        </p>
+        <h2 className="capitalize text-2xl   font-bold ">my projects</h2>
         <div className="flex mt-8 justify-center">
           <div className="flex flex-col  w-full  ">
           {variants.map((variant) => (

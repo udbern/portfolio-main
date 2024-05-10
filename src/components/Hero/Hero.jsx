@@ -6,7 +6,7 @@ import CustomButton from "../Ui/CustomButton/CustomButton";
 function Hero() {
   return (
     <>
-      <section className=" dark:bg-[#000000]    font-roboto ">
+      <section className=" dark:bg-[#000000]  mx-2   font-roboto ">
         <div class="font-sans lg:min-h-screen text-[#333]  bg max-w-6xl md:px-5 max-md:max-w-md mx-auto">
           <div class="grid md:grid-cols-2 items-center md:gap-8 gap-6">
             <div class="max-md:order-1 max-md:text-center capitalize text-gray-800 dark:text-[#DBDADC]">
