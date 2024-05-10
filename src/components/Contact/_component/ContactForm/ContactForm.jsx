@@ -1,6 +1,7 @@
 import React from "react";
 import CustomButton from "../../../Ui/CustomButton/CustomButton";
 import { FiSend } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function ContactForm() {
   return (

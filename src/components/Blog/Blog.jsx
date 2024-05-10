@@ -1,6 +1,8 @@
 import React from "react";
 import CustomBlogCard from "../Blog/_component/CustomBlogCard/CustomCard";
 import CustomButton from "../Ui/CustomButton/CustomButton";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+
 function Blog() {
   return (
     <>
