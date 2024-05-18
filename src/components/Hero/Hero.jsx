@@ -48,7 +48,7 @@ function Hero() {
               </motion.div>
             </div>
 
-            <div class="lg:h-[650px] md:h-[550px]  overflow-hidden flex items-center relative max-md:before:hidden before:absolute dark:before:bg-[#ff4800ab] before:bg-black before:h-full before:w-[83.1%] before:rounded-sm  before:right-3 before:z-0">
+            <div class="lg:h-[650px] md:h-[550px]  overflow-hidden flex items-center relative max-md:before:hidden before:absolute dark:before:bg-[white] before:bg-black before:h-full before:w-[83.1%] before:rounded-sm  before:right-3 before:z-0">
               <motion.img
                 initial={{ x: -70, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
