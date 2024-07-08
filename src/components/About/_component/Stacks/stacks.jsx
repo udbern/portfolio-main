@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 function stacks() {
   return (
     <>
-      <section className="flex items-center text-3xl text-black dark:text-white space-x-5">
+      <section className="flex items-center text-2xl md:text-3xl text-black dark:text-white space-x-4  md:space-x-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

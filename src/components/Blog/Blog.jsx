@@ -1,4 +1,3 @@
-// src/components/Blog.js
 import React from "react";
 import CustomButton from "../Ui/CustomButton/CustomButton";
 import CustomBlogCard from "./_component/CustomBlogCard/CustomCard";
@@ -22,7 +21,7 @@ function Blog() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-[800px] lg:max-w-[1500px] mx-auto">
             {data?.data.map((blog) => (
-              <CustomBlogCard key={blog.Id} blog={blog.attributes} />
+              <CustomBlogCard key={blog.id} blog={{ ...blog.attributes, id: blog.id }} />
             ))}
           </div>
         </div>

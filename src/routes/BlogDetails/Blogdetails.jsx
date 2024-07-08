@@ -1,62 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Markdown from 'react-markdown';
 import { useParams } from 'react-router-dom';
-import { FaShare } from 'react-icons/fa';
 
-function BlogDetails() {
-  const { blogId } = useParams();
+
+function Blogdetails() {
+  const { id } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchBlogDetails = async () => {
+    const fetchBlog = async () => {
       try {
-        const response = await fetch(`http://localhost:1337/api/blogs/${blogId}?populate=*`);
+        const response = await fetch(`http://localhost:1337/api/blogs/${id}?populate=*`);
         const data = await response.json();
-
-        if (response.ok) {
-          setBlog(data.data);
-        } else {
-          setError(data.error.message || 'Unknown error');
-        }
-      } catch (error) {
-        setError(error.message);
-      } finally {
+        setBlog(data.data);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
         setLoading(false);
       }
     };
 
-    fetchBlogDetails();
-  }, [blogId]);
+    fetchBlog();
+  }, [id]);
 
-  if (loading) {
-    return <p className="text-center">Loading...</p>;
-  }
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
-  if (error) {
-    return <p className="text-center">Error fetching blog content: {error}</p>;
-  }
-
-  if (!blog) {
-    return <p className="text-center">Blog not found.</p>;
-  }
-
-  const { attributes } = blog;
+  const { title, publishedAt, author, image, content } = blog.attributes;
 
   return (
-    <div className="max-w-4xl mx-auto py-16">
-      <div className="max-w-5xl mx-auto border p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-4xl font-bold">{attributes.title}</h1>
-          <button className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 transition-colors">
-            <FaShare />
-          </button>
+    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className='p-5 '>
+        <img
+          src={`http://localhost:1337${image.data.attributes.url}`}
+          alt={title}
+          className="w-full h-96 object-cover rounded-md  object-center"
+        />
         </div>
-        <p className="text-gray-600 mb-4">By {attributes.author}</p>
-        <p>{attributes.content}</p>
+        
+        <div className="p-6">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">{title}</h1>
+          <div className="text-gray-600 mb-4">
+            <span className="block mb-2">Published on: {new Date(publishedAt).toLocaleDateString()}</span>
+            <span className="block">Author: {author || 'Anonymous'}</span>
+          </div>
+          <Markdown className="prose prose-lg text-gray-700">{content}</Markdown>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-export default BlogDetails;
+export default Blogdetails;
