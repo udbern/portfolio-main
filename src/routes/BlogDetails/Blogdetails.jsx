@@ -25,8 +25,8 @@ function Blogdetails() {
     fetchBlog();
   }, [id]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (loading) return <div className='text-center'>Loading...</div>;
+  if (error) return <div className='text-center'>Error: {error.message}</div>;
 
   const { title, publishedAt, author, image, content } = blog.attributes;
 

@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <>
       <footer className=' bg-black w-full font-roboto  p-2 px-5  min-[calc(100vh - 34px)]:  '>
-        <div className='flex  max-w-6xl mx-auto   items-center justify-between  md:h-20   '>
+        <div className='flex  flex-wrap justify-center max-w-6xl mx-auto  gap-10  items-center md:justify-between  md:h-20   '>
           <Link to="/">
           <p className='text-white'>&copy; {getCurrentYear()} UduakAbasi Bernard Edwin</p>
           </Link>

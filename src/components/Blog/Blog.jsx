@@ -6,8 +6,8 @@ import useGetData from "../../Hooks/useGetData";
 function Blog() {
   const { data, loading, error } = useGetData("http://localhost:1337/api/blogs?populate=*");
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching data: {error.message}</div>;
+  if (loading) return <div className="text-center">Loading...</div>;
+  if (error) return <div className="text-center">Error fetching data: {error.message}</div>;
   console.log(data);
 
   return (

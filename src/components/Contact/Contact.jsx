@@ -31,8 +31,8 @@ function Contact() {
               Have some big idea or brand to develop and need help?
             </motion.p>
           </div>
-          <div className="grid lg:grid-cols-3 items-center gap-4 p-2  rounded-md mt-8">
-            <div className="dark:bg-[#f3f3f3]  bg-black  rounded-lg p-6 max-lg:text-center">
+          <div className="grid lg:grid-cols-3 items-center gap-4 p-1  md:p-10 rounded-md mt-8">
+            <div className="dark:bg-[#f3f3f3] border   border-red-500 bg-black  rounded-lg p-6 max-lg:text-center">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

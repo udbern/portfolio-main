@@ -17,8 +17,8 @@ function CustomCard({ project }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <div className="  h-60 md:h-80  duration-500 shadow-4xl  border rounded-md">
-      <div  className="cursor-pointer h-full shadow-4xl dark:shadow-gray-500 rounded overflow-hidden mx-5 md:mx-0 relative group">
+    <div className="  p-4 md:p-0  h-[260px] md:h-[350px] border-t border-gray-500  duration-500 shadow-4xl  rounded-sm">
+      <div  className="cursor-pointer   h-full shadow-4xl dark:shadow-gray-500 overflow-hidden  md:mx-0 relative group">
           <img 
             src={`http://localhost:1337${project?.image?.data?.attributes?.url}`} 
             alt="project.png"
@@ -44,8 +44,8 @@ function CustomCard({ project }) {
         </div>
       
 
-      <Modal className=" w-full md:w-[80%] rounded-md p-2  h-[80%] overflow-auto " isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
+      <Modal className=" w-full md:w-[80%]  p-2  h-[50%]  " isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent className="  overflow-auto ">
           {(onClose) => (
             <>
               <ModalHeader className="">

@@ -6,10 +6,11 @@ import useGetData from '../../Hooks/useGetData';
 function Hero() {
   const { loading, error, data } = useGetData('http://localhost:1337/api/heroes?populate=*');
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching data: {error.message}</div>;
+  if (loading) return <div className='text-center'>Loading...</div>;
+  if (error) return <div className='text-center'>Error fetching data: {error.message}</div>;
 
   const hero = data?.data[0]?.attributes; 
+  const cvUrl = `http://localhost:1337${hero?.cv?.data?.attributes?.url}`;
 
   return (
     <section className="dark:bg-[#000000] mx-2 font-roboto">
@@ -46,7 +47,9 @@ function Hero() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="mt-5 lg:mt-10 space-x-4"
             >
-              <CustomButton>download CV</CustomButton>
+              <a href={cvUrl} download>
+                <CustomButton>Download CV</CustomButton>
+              </a>
             </motion.div>
           </div>
 

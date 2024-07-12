@@ -7,11 +7,11 @@ import useGetData from '../../Hooks/useGetData';
 function Project() {
   const { data, loading, error } = useGetData('http://localhost:1337/api/projects?populate=*');
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error fetching data: {error.message}</div>;
+  if (loading) return <div className="text-center">Loading...</div>;
+  if (error) return <div className="text-center">Error fetching data: {error.message}</div>;
 
   return (
-    <section className="font-roboto text-center border mt-2 mb-20 pt-20 block justify-center container mx-auto">
+    <section className="font-roboto text-center  mt-2 mb-20 pt-20 block justify-center container mx-auto">
       <motion.h2 initial={{ y: 70, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
